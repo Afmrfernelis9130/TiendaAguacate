@@ -2,11 +2,11 @@ const a = [
     {
 
         username: "fmartinez",
-        pass: 12345
+        pass: "aguacate"
     },
     {
         username: "acastillo",
-        pass: 123456
+        pass: "aguacate"
     }
 ];
 
@@ -21,11 +21,11 @@ const validLogin = () => {
     let passwordP = document.getElementById('password').value;
 
 
-    if (usernameU=="fmartinez@homail.com" && passwordP==12345 || usernameU=="acastillo@homail.com" && passwordP==123456 ) {
+    if (usernameU=="fmartinez@homail.com" && passwordP==="aguacate" || usernameU=="acastillo@homail.com" && passwordP==="aguacate" ) {
         alert("todo bien")
-        console.log("todo listo")
+
     }
-    if (usernameU !="fmartinez@homail.com" && passwordP==12345 || usernameU !="acastillo@homail.com" && passwordP==123456 ) {
+    if (usernameU !="fmartinez@homail.com" && passwordP==="aguacate" || usernameU !="acastillo@homail.com" && passwordP==="aguacate" ) {
         alert("Name o Password wrong")
     }
 
