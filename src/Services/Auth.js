@@ -1,62 +1,59 @@
 const usuario = [
     {   
         name:"Fernelis",
-        username: "fmartinez",
+        username: "fmartinez@gmail.com",
         pass: "aguacate"
     },
     {
         name:"Alexander",
-        username: "acastillo",
+        username: "acastillo@gmail.com",
         pass: "aguacate2"
     }
 ];
 
-usuario.forEach(element => {
-    console.log(Object.values(element));
-    
-    
-});
+//Crear arreglo con los valores
+
+const imprimirUsuario= ()=>{
 
 
+    const username = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
 
-const username = document.getElementById('email').value;
-const password = document.getElementById('password').value;
+    let arrays =[];
+    for (let  i=0 ; usuario.length > i ; i++ ){
+    arrays = arrays.concat(Object.values(usuario[i]));
 
-console.log(username,password);
+   
+   }
 
+if ( arrays[1] == username && arrays[2]== password) {
+    alert("Se logeo Fernis!")
+}else 
 
+if(arrays[4] == username && arrays[5] == password){
+    alert("Se logeo Alex!");
+}
 
+ 
 
-const imprimirUsuario = ()=>{
-
-    alert(username,password);
 }
 
 
 
 
-// const validLogin = () => {
-
-
-//     let usernameU = document.getElementById('email').value;
-//     let passwordP = document.getElementById('password').value;
-
-
-//     if (usernameU=="fmartinez@homail.com" && passwordP==="aguacate" || usernameU=="acastillo@homail.com" && passwordP==="aguacate" ) {
-//         alert("todo bien")
-
-//     }
-//     if (usernameU !="fmartinez@homail.com" && passwordP==="aguacate" || usernameU !="acastillo@homail.com" && passwordP==="aguacate" ) {
-//         alert("Name o Password wrong")
-//     }
-
-//     if (usernameU=="" && passwordP=="") {
-//         alert("empty fields")
-//     }
 
 
 
 
-// }
+
+
+
+
+
+
+
+
+
+
 
