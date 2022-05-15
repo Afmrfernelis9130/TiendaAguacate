@@ -34,6 +34,17 @@ if ( arrays[1] == username && arrays[2]== password) {
 if(arrays[4] == username && arrays[5] == password){
     alert("Se logeo Alex!");
 }
+else 
+if (arrays[4] != username || arrays[5] != password){
+
+    alert ("Contrasena o usuario incorrectos");
+
+}else
+if( usuario == "" || password == "")
+{
+    alert("No se pueden dejar espacios en blanco");
+}
+
 
  
 
