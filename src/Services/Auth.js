@@ -11,7 +11,7 @@ const usuario = [
     }
 ];
 
-//Crear arreglo con los valores
+//Crear arreglo con los valores holiss
 
 const imprimirUsuario= ()=>{
 
@@ -53,22 +53,4 @@ if( usuario == "" || password == "")
  
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
