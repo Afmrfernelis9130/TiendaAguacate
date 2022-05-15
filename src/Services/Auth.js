@@ -1,82 +1,36 @@
-const a = [
-    {
+const user=[
+    {username:"fmartinez",password:"12345"},
+    {username:"acastillo",password:"123456"}
 
-        username: "fmartinez@hotmail.com",
-        pass: "aguacate"
-    },
-    {
-        username: "acastillo@hotmail.com",
-        pass: "aguacate2"
-    }
-];
+]
+
+const startSession=()=>{
 
 
-let usernameU = document.getElementById('Email').value;
-let passwordP = document.getElementById('Password').value;
+    const username= document.getElementById("Email").value;
+    const passwords= document.getElementById("Password").value;;
 
 
 
-//sacamos la informacion del array
-const k = a.map(ar => ar.username);
-const k1 = a.map(ar => ar.pass);
+    for(users of user){
 
-//filtramos la informacion del array
-const p = k.filter(arr => arr === usernameU);
-const p1 = k1.filter(arr => arr === "aguacate");
-
-console.log(p);
-console.log(p1);
-
-//convertimos el array filtrado en un string
-const uf = p.join()
-const pf = p1.join()
-
-console.log(uf);
+        if(users.username== username && users.password== passwords){
+            alert("todo rico")
 
 
-const validLogin = () => {
+        }
+        if(users.username==" " || users.password== ""){
+            alert("empty fields")
+            console.log("te la bebiste")
 
+        }
+        if(users.username!=username || users.password!= passwords){
+            alert("Name o Password wrong")
+            console.log("te la bebiste")
 
-
-
-
-    if (usernameU == "fmartinez@hotmail.com" && passwordP === "aguacate" || usernameU == "acastillo@hotmail.com" && passwordP === "aguacate") {
-        alert("todo bien")
-
-    } else if (usernameU != "fmartinez@hotmail.com" && passwordP === "aguacate" || usernameU != "acastillo@hotmail.com" && passwordP === "aguacate") {
-        alert("Name o Password wrong")
-    } else if (usernameU == "" && passwordP === "") {
-        alert("empty fields")
+        }
     }
 
+    return false;
 
 }
-
-
-const prueba = () => {
-
-
-
-    console.log(p1);
-
-    const pruU =usernameU;
-    const PruP = passwordP;
-
-
-
-
-    if (pruU ==  uf && PruP === pf) {
-
-
-        alert("bien")
-        console.log("que bien")
-
-    } else {
-
-        console.log("que lio")
-    }
-
-
-}
-
-
