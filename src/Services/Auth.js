@@ -7,26 +7,37 @@ const user=[
 const startSession=()=>{
 
 
+    //capturamos los datos del HTML
     const username= document.getElementById("Email").value;
     const passwords= document.getElementById("Password").value;;
 
 
-
+//con este for recoremos el array de usurios
     for(users of user){
 
         if(users.username== username && users.password== passwords){
-            alert("todo rico")
-
+            alert("Bien")
+            return false;
 
         }
-        if(users.username==" " || users.password== ""){
-            alert("empty fields")
-            console.log("te la bebiste")
+        if(username==" " || passwords== ""){
+            alert("Empty fields")
+            return false;
+
+        }
+        if(users.username== username && passwords== ""){
+            alert("Empty password field")
+            return false;
+
+        }
+        if(username== "" && users.password== passwords){
+            alert("Empty username field")
+            return false;
 
         }
         if(users.username!=username || users.password!= passwords){
             alert("Name o Password wrong")
-            console.log("te la bebiste")
+            return false;
 
         }
     }
