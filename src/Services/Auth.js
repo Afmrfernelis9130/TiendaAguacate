@@ -10,7 +10,7 @@ const startSession = () => {
     //capturamos los datos del HTML
     const username = document.getElementById("email").value;
     const passwords = document.getElementById("password").value;
-    ;
+
 
 
 //con este for recoremos el array de usurios
