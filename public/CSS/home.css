@@ -1,0 +1,26 @@
+
+
+
+.ul-menu{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0rem;
+    font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
+    background: #fff;
+    border-bottom: 2px solid rgba(34,36,38,.15);
+    box-shadow: 20 0px 10px 10px rgba(34,36,38,.15);
+    align-items: center;
+    
+}
+
+.logo-nombre{
+    display: flex;
+    flex-direction: row;
+
+}
+
+img {
+    width: 90px;
+    height:90px;
+    
+}
