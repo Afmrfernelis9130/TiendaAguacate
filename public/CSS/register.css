@@ -5,14 +5,29 @@
     box-sizing: border-box;
 }
 
+:root{
+
+    --white: #FFFFFF;
+    --black: #000000;
+    --dark: #232830;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #65dd75;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+    --box : 
+
+}
+
 body {
-    background-color: #9b59b6;
-    font-family: 'Open Sans', sans-serif;
+    background-color: white;
+    font-family: 'Quicksand', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin: 0;
+    
 }
 
 .container {
@@ -102,8 +117,8 @@ body {
 }
 
 .form button {
-    background-color: #8e44ad;
-    border: 2px solid #8e44ad;
+    background-color:var(--hospital-green);
+    border: none;
     border-radius: 4px;
     color: #fff;
     display: block;
