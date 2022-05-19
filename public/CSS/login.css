@@ -25,6 +25,8 @@ body{
    
     background:var(--white);
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     border-radius: 30px;
     margin-top: 150px;
@@ -33,42 +35,11 @@ body{
     box-shadow: 0px 0px 5px 1px black;
 
 }
-
-.title {
-
+.title-logo{
+    margin-top: -10px;
+}
+.title-logo h1{
     text-align: center;
-    font-size: larger;
-    font-weight: bold
-
-
-}
-
-.logos {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-
-
-
-
-.child {
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: -45px;
-    margin-bottom: 5px;
-}
-
-img {
-    
-    width: 30px;
-    padding: 10px;
-
-
 }
 
 .form {
@@ -78,21 +49,52 @@ img {
 
 }
 
-.form-control {
+img {
+    
+    width: 30px;
+    padding: 10px;
+}
 
+
+
+.form-control {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 300px;
     height: 30px;
-    margin-top: 10px;
+    margin-top: 25px;
     margin-bottom: 10px;
-    border-radius: 50px;
-    background-color: mediumaquamarine;
-    border: none;
     font-size: var(--lg);
     font-weight: bold;
-    color: var(--text-input-field);
+     
 }
+
+.form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    width: 100%;
+}
+.container-forgot-remember{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+    
+
+}
+
+
+
+.container-forgot-remember label{
+    margin-right: 50px;
+    font-size: var(--sm);
+
+}
+
+
+
 
 
 
@@ -100,11 +102,7 @@ label{
     font-size: var(--md);
     font-weight: bold;
 }
-.checkbox {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
+
 
 .btn{
     
@@ -112,19 +110,30 @@ label{
     width: 300px;
     height: 35px;
     border-radius: 30px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-   font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-weight: bold;
     background-color:var(--hospital-green);
     border: none;
     color: var(--white);
     
 }
 
-.Span {
+
+.privacy-terms{
+    
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 30px;
+    margin: 0px;
+}
+
+.privacy-terms a{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+a{ 
+    
+    font-size: small;
 }
 
