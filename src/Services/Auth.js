@@ -1,10 +1,15 @@
+ // import {user} from "/src/Model/User"
+
+
+
+
 const user = [
     {username: "fmartinez", password: "12345"},
     {username: "acastillo", password: "123456"}
 
 ]
 
-const startSession = () => {
+ const startSession = () => {
 
 
     //capturamos los datos del HTML
