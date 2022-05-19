@@ -1,56 +1,52 @@
-const usuario = [
-    {   
-        name:"Fernelis",
-        username: "fmartinez@gmail.com",
-        pass: "aguacate"
-    },
-    {
-        name:"Alexander",
-        username: "acastillo@gmail.com",
-        pass: "aguacate2"
-    }
-];
+const user = [
+    {username: "fmartinez", password: "12345"},
+    {username: "acastillo", password: "123456"}
 
-//Crear arreglo con los valores holiss
+]
 
-const imprimirUsuario= ()=>{
+const startSession = () => {
 
 
-    const username = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    //capturamos los datos del HTML
+    const username = document.getElementById("email").value;
+    const passwords = document.getElementById("password").value;
 
-//con este for recoremos el array de usurios // probando
-    for(users of user){
 
-    let arrays =[];
-    for (let  i=0 ; usuario.length > i ; i++ ){
-    arrays = arrays.concat(Object.values(usuario[i]));
 
-   
-   }
+//con este for recoremos el array de usurios
+    for (users of user) {
 
-if ( arrays[1] == username && arrays[2]== password) {
-    alert("Se logeo Fernis!")
-}else 
+        if (users.username == username && users.password == passwords) {
 
-if(arrays[4] == username && arrays[5] == password){
-    alert("Se logeo Alex!");
-}
-else 
-if (arrays[4] != username || arrays[5] != password){
+            window.location = "/public/home.html";
 
-    alert ("Contrasena o usuario incorrectos");
 
-}else
-if( usuario == "" || password == "")
-{
-    alert("No se pueden dejar espacios en blanco");
-}
+
+            return false;
+
+        }
+        if (username == " " || passwords == "") {
+            alert("Empty fields")
+            return false;
+
+        }
+        if (users.username == username && passwords == "") {
+            alert("Empty password field")
+            return false;
+
+        }
+        if (username == "" && users.password == passwords) {
+            alert("Empty username field")
+            return false;
+
+        }
+        if (users.username != username || users.password != passwords) {
+            alert("Name o Password wrong")
+            return false;
 
         }
     }
 
- 
+    return false;
 
 }
-
