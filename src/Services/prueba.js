@@ -1,4 +1,5 @@
-import {user} from "/src/Model/User"
+import {p} from "/src/Model/User.js"
+
 
 
 const arr = [];
@@ -8,5 +9,4 @@ const password = document.getElementById('password').value;
 const password2 = document.getElementById('password2').value;
 
 
- console.log(user.username);
-console.log("hello world");
+ console.log(p);
