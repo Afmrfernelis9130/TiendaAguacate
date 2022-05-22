@@ -1,7 +1,17 @@
- // import {user} from "/src/Model/User"
+  // import {user} from "/src/Model/User.js"
 
 
+  // const form = document.getElementById('form');
 
+
+  // form.addEventListener('submit', e => {
+  //     e.preventDefault();
+  //
+  //
+  //     startSession();
+  //
+  //
+  // });
 
 const user = [
     {username: "fmartinez", password: "12345"},
@@ -9,7 +19,7 @@ const user = [
 
 ]
 
- const startSession = () => {
+ function startSession() {
 
 
     //capturamos los datos del HTML
@@ -19,13 +29,12 @@ const user = [
 
 
 //con este for recoremos el array de usurios
-    for (users of user) {
+
+     for (users of user) {
 
         if (users.username == username && users.password == passwords) {
 
             window.location = "/public/home.html";
-
-
 
             return false;
 

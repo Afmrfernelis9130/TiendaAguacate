@@ -1,4 +1,3 @@
-
 const arr = [];
 
 export  const user = [
@@ -7,7 +6,7 @@ export  const user = [
 
 ]
 
-export  const person = (username,password,password2) => {
+export  function person (username,password,password2)  {
 
     arr.push({username:username,password:password,password2:password2});
 
@@ -15,8 +14,7 @@ export  const person = (username,password,password2) => {
 
 
 //ver datos de los usuarios
-export const verDato=()=>{
+export const verDato=()=> console.log(arr);
 
-    return console.log(arr);
 
-}
+
