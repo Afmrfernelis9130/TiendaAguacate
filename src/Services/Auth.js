@@ -1,23 +1,21 @@
-  // import {user} from "/src/Model/User.js"
+   import {user} from "/src/Model/User.js"
 
 
-  // const form = document.getElementById('form');
+const form = document.getElementById('form');
 
 
-  // form.addEventListener('submit', e => {
-  //     e.preventDefault();
-  //
-  //
-  //     startSession();
-  //
-  //
-  // });
 
-const user = [
-    {username: "fmartinez", password: "12345"},
-    {username: "acastillo", password: "123456"}
+//Recive el evento cuando se le da cli al boton
+  form.addEventListener('submit', e => {
+      e.preventDefault();
 
-]
+
+      startSession();
+
+
+  });
+
+
 
  function startSession() {
 
@@ -30,6 +28,7 @@ const user = [
 
 //con este for recoremos el array de usurios
 
+     let users;
      for (users of user) {
 
         if (users.username == username && users.password == passwords) {
