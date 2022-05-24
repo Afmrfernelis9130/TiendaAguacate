@@ -1,23 +1,21 @@
-   import {user} from "/src/Model/User.js"
+import {user} from "/src/Model/User.js"
 
 
 const form = document.getElementById('form');
 
 
-
 //Recive el evento cuando se le da cli al boton
-  form.addEventListener('submit', e => {
-      e.preventDefault();
+form.addEventListener('submit', e => {
+    e.preventDefault();
 
 
-      startSession();
+    startSession();
 
 
-  });
+});
 
 
-
- function startSession() {
+function startSession() {
 
 
     //capturamos los datos del HTML
@@ -25,11 +23,10 @@ const form = document.getElementById('form');
     const passwords = document.getElementById("password").value;
 
 
-
 //con este for recoremos el array de usurios
 
-     let users;
-     for (users of user) {
+    let users;
+    for (users of user) {
 
         if (users.username == username && users.password == passwords) {
 

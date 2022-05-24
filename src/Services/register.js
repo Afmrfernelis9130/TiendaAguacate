@@ -1,11 +1,14 @@
 import {person} from "/src/Model/User.js"
 import {verDato} from "/src/Model/User.js"
+import {clear} from "/src/Model/User.js"
+
 
 
 const form = document.getElementById('form');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
+const elementos = document.getElementsByTagName('input');
 let valor = false;
 
 
@@ -17,8 +20,10 @@ form.addEventListener('submit', e => {
 
     checkInputs();
 
+    clear(elementos);
 
 });
+
 
 
 //Validacion de los campos para ver si cumple con lo establecido
@@ -60,11 +65,10 @@ function checkInputs() {
     if (valor) {
         person(emailValue, passwordValue, password2Value);
         verDato();
+
+
     }
 
-
-    // person(emailValue,passwordValue,password2Value);
-    // verDato();
 
 }
 
@@ -88,5 +92,6 @@ function setSuccessFor(input) {
 function isEmail(email) {
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
 
 
