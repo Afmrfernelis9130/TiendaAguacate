@@ -20,6 +20,8 @@ export  function person (username,password,password2)  {
 //ver datos de los usuarios
 export const verDato=()=> console.log(arr);
 
+
+//Para limpiar los input
 export function  clear(elementos) {
 
 
