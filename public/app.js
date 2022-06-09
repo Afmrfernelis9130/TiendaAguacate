@@ -3,39 +3,35 @@ const templateCard = document.getElementById('template-card').content;
 const fragment = document.createDocumentFragment()
 
 
-
-
-
-document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener('DOMContentLoaded', () => {
     fetchData()
 });
 
 
-
-const fetchData= async()=>{
+const fetchData = async () => {
 
 
     try {
         const response = await fetch('api.json');
         const data = await response.json();
-        // console.log(data);
+        console.log(data);
         pintarCards(data)
 
-    }catch(err){
+    } catch (err) {
         console.log(err);
     }
 
 }
 
 
-
-const pintarCards = data =>{
+const pintarCards = data => {
 
     data.forEach(element => {
 
-       templateCard.querySelector('h5').textContent = element.title;
-       templateCard.querySelector('p').textContent = element.precio;
-       templateCard.querySelector('img').setAttribute('src',element.thumbnailUrl);
+
+        templateCard.querySelector('h5').textContent = element.title;
+        templateCard.querySelector('p').textContent = element.price;
+        templateCard.querySelector('img').setAttribute('src', element.thumbnailUrl);
 
         const clone = templateCard.cloneNode(true)
         fragment.appendChild(clone);
@@ -43,3 +39,10 @@ const pintarCards = data =>{
     item.appendChild(fragment);
 
 }
+
+
+
+
+
+
+
