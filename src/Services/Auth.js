@@ -1,14 +1,23 @@
-// const username = document.getElementById("email");
-// const passwords = document.getElementById("password");
-
 const api = "/src/Model/user.json";
+let username;
+let passwords;
+const btnOnClick = document.getElementById('btn');
+let isLogged = false;
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    fetchData()
-//
+
 });
+
+
+btnOnClick.addEventListener('click', (event) => {
+
+    fetchData()
+
+
+})
+
 
 const fetchData = async () => {
 
@@ -18,7 +27,7 @@ const fetchData = async () => {
         const data = await response.json();
 
 
-        login(data)
+        login(data);
 
 
     } catch (err) {
@@ -29,21 +38,19 @@ const fetchData = async () => {
 
 
 const login = data => {
-
-    const username = document.getElementById("email").value;
-    const passwords = document.getElementById("password").value;
-
-
+    username = document.getElementById("email").value;
+    passwords = document.getElementById("password").value;
 
     data.forEach(element => {
 
-        if(element.username=="fmartinez" && element.pass=="12345"){
+        if (element.username == username && element.pass == passwords) {
             console.log("Login Successful")
+            window.location = "/public/home.html";
+            isLogged = true;
 
-            return false;
+        }
+        else if (!isLogged) {
 
-        }   else{
-           //  console.log( element.pass)
             console.log("Login Failed")
         }
     })
@@ -52,12 +59,5 @@ const login = data => {
 }
 
 
-function startSession() {
-
-    //fetchData()
-
-    console.log(username)
-
-}
 
 
