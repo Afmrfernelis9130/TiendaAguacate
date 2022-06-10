@@ -1,52 +1,63 @@
-const user = [
-    {username: "fmartinez", password: "12345"},
-    {username: "acastillo", password: "123456"}
-
-]
-
-const startSession = () => {
+const api = "/src/Model/user.json";
+let username;
+let passwords;
+const btnOnClick = document.getElementById('btn');
+let isLogged = false;
 
 
-    //capturamos los datos del HTML
-    const username = document.getElementById("email").value;
-    const passwords = document.getElementById("password").value;
+document.addEventListener('DOMContentLoaded', () => {
 
 
-
-//con este for recoremos el array de usurios
-    for (users of user) {
-
-        if (users.username == username && users.password == passwords) {
-
-             window.location = "/public/home.html";
+});
 
 
+btnOnClick.addEventListener('click', (event) => {
 
-            return false;
+    fetchData()
 
-        }
-        if (username == " " || passwords == "") {
-            alert("Empty fields")
-            return false;
 
-        }
-        if (users.username == username && passwords == "") {
-            alert("Empty password field")
-            return false;
+})
 
-        }
-        if (username == "" && users.password == passwords) {
-            alert("Empty username field")
-            return false;
 
-        }
-        if (users.username != username || users.password != passwords) {
-            alert("Name o Password wrong")
-            return false;
+const fetchData = async () => {
 
-        }
+
+    try {
+        const response = await fetch(api);
+        const data = await response.json();
+
+
+        login(data);
+
+
+    } catch (err) {
+        console.log(err);
     }
 
-    return false;
+}
+
+
+const login = data => {
+    username = document.getElementById("email").value;
+    passwords = document.getElementById("password").value;
+
+    data.forEach(element => {
+
+        if (element.username == username && element.pass == passwords) {
+            console.log("Login Successful")
+            window.location = "/public/home.html";
+            isLogged = true;
+
+        }
+        else if (!isLogged) {
+
+            console.log("Login Failed")
+        }
+    })
+
 
 }
+
+
+
+

@@ -3,98 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tienda de Aguacate</title>
     <link rel="stylesheet" href="/public/CSS/login.css">
 </head>
 <body>
 
-
-
-    
-
-   
-    
- 
-
 <div class="container">
 
+    <div class="title">
+        <p class="title login"> Log in</p>
 
-    <div class="title-logo">
+    </div>
 
-        <h1>Login</h1>
-
+    <div class="logos">
         <span><a href="/"><img src="/public/Asset/logos/logo-gmail.png" alt="logo-gmail"> </a> </span>
         <span><a href="/"> <img src="/public/Asset/logos/logo-twitter.png" alt="logo-twitter"> </a> </span>
         <span><a href="/"><img src="/public/Asset/logos/logo-fb.png" alt="logo-fb"> </a> </span>
 
-          <p>or login  using email</p>
 
     </div>
 
-     
-
-    <form action="" class="form">
-
-       <div id="email" class="form-control" >
-           <label for="email">Email</label>
-           <input type="text" placeholder="example@example.com" name="email" id="email" >
-           <p>El correo solo puede contener letras,numeros ,puntos, guines
-               y guion bajo. </p>
-
-       </div>
-
-
-       <div id="password" class="form-control">
-        <label for="password">Password</label>
-        <input type="password" placeholder="**********"  id="password">
-        <p>
-            La contrasena tiene que ser de 4 a 12 digitos.
-        </p>
-
+    <div class="child">
+        <p>or login using email</p>
     </div>
 
-    <div class="container-forgot-remember">
 
-        <div class="rememberme">
-            <input type="checkbox" id="checkbox">
-
-            <label for="checkbox">Remember me</label>
+    <form class="form" id="form">
+        <div >
+            <label for="Email" class="label" >Email </label>
+            <input type="test" class="form-control" id="email"  placeholder="test@example.com" >
 
         </div>
-       
-       
-        <div class="forgot-password">
-            <a href="/">Forgot password ?</a>
-
+        <div >
+            <label for="password"  class="label" >Password</label>
+            <input type="password" class="form-control" id="password" placeholder="*******" >
         </div>
-        
-        
-    </div>
-       
-      <div class="container-btn">
-          <button type="button" onclick="startSession ()" class="btn">Submit</button>
-      </div>
+        <div class="checkbox">
+            <input type="checkbox"  id="Check" >
+            <label for="Check" >Remember</label>
+            <span> <a href=""> forgot password?</a></span>
+        </div>
 
-      <div class="privacy-terms">
-
-        <a href="/">Privacy Policy</a>
-        <a href="/">Terms & Condition</a>
-    </div>
-
-       
-
+        <button type="button" class="btn" id="btn">Submit</button>
     </form>
-      
-    
+
+    <div class="Span">
+        <span> <a href=""> Privacy Policy</a> </span>
+        <span> <a href=""> Terms & Conditions</a> </span>
+        <div class="weo" >
+
+
+        </div>
+
+    </div>
+
 
 
 </div>
 
 
 
-<script src="/src/Services/Auth.js"> </script>
+<!--<script src="/src/Services/Auth.js" > </script>-->
+<script src="../src/Services/Auth.js"  type="module"> </script>
+
 </body>
 
 

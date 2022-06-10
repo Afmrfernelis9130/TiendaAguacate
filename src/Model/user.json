@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "username":"fmartinez",
+    "pass":"123456",
+    "email":"fmartinez@gmail.com",
+    "name": "Fernelis"
+
+  },
+  {
+    "id": 2,
+    "username":"acastillo",
+    "pass":"123456",
+    "email":"acastillo@gmail.com",
+    "name":"Alex"
+  },
+  {
+    "id": 3,
+    "username":"pmartinez",
+    "pass":"123456",
+    "email": "pmartinez@gmail.com",
+    "name": "Pedro"
+  }
+
+]
