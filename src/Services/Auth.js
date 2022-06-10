@@ -4,13 +4,7 @@ let passwords;
 const btnOnClick = document.getElementById('btn');
 let isLogged = false;
 
-
-document.addEventListener('DOMContentLoaded', () => {
-
-
-});
-
-
+// onclick event
 btnOnClick.addEventListener('click', (event) => {
 
     fetchData()
@@ -18,7 +12,7 @@ btnOnClick.addEventListener('click', (event) => {
 
 })
 
-
+// fetch data from json file
 const fetchData = async () => {
 
 
@@ -36,7 +30,7 @@ const fetchData = async () => {
 
 }
 
-
+// login function
 const login = data => {
     username = document.getElementById("email").value;
     passwords = document.getElementById("password").value;
