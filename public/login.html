@@ -20,38 +20,37 @@
 
 <div class="container">
 
-
-    <div class="title-logo">
+     <div class="logo">
 
         <h1>Login</h1>
+     </div>
+    
 
+    <div class="title-logo">
         <span><a href="/"><img src="/public/Asset/logos/logo-gmail.png" alt="logo-gmail"> </a> </span>
         <span><a href="/"> <img src="/public/Asset/logos/logo-twitter.png" alt="logo-twitter"> </a> </span>
         <span><a href="/"><img src="/public/Asset/logos/logo-fb.png" alt="logo-fb"> </a> </span>
-
+          
           <p>or login  using email</p>
 
     </div>
 
      
 
-    <form action="" class="form">
+    <form action="" id="form-container" class="form">
 
-       <div id="email" class="form-control" >
+       <div class="form-control" >
            <label for="email">Email</label>
            <input type="text" placeholder="example@example.com" name="email" id="email" >
-           <p>El correo solo puede contener letras,numeros ,puntos, guines
-               y guion bajo. </p>
+          <small></small>
 
        </div>
 
 
-       <div id="password" class="form-control">
+       <div class="form-control">
         <label for="password">Password</label>
         <input type="password" placeholder="**********"  id="password">
-        <p>
-            La contrasena tiene que ser de 4 a 12 digitos.
-        </p>
+        <small></small>
 
     </div>
 
@@ -74,7 +73,7 @@
     </div>
        
       <div class="container-btn">
-          <button type="button" onclick="startSession ()" class="btn">Submit</button>
+          <button type="submit"  class="btn">Submit</button>
       </div>
 
       <div class="privacy-terms">

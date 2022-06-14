@@ -1,63 +1,95 @@
-const form = document.getElementById('form');
-const usuario = document.getElementById('username');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const password2 = document.getElementById('password2');
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
+    
+    const passConfirm = document.querySelector('#password2');
 
-    checkInputs();
-});
+    form.addEventListener("submit" , e=>{
+        e.preventDefault();
+    const form = document.querySelector('#form');
+    const username = document.getElementById('username');
+    const email = document.getElementById('email');
+    const password = document.getElementById('passsword');
+    
+    
+    
+        validarForm();
+    });
 
-function checkInputs() {
-    // trim to remove the whitespaces
-    const usuarioValue = usuario.value.trim();
+
+
+const validarForm = ()=>{
+        
+    const usernameValue = username.value.trim();
     const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
-    const password2Value = password2.value.trim();
+    const passConfirmValue = passConfirm.value.trim();
+   
+    
+    //Validar username
+     if (usernameValue ==="")  {
+             setErrorFor(username,"El campo esta vacio");
+       }
+         else if (usernameValue.length  < 6 ) {
 
-    if(usuarioValue === '') {
-        setErrorFor(usuario, 'Noi puede dejar el usuairo en blanco');
-    } else {
-        setSuccessFor(usuario);
-    }
+            setErrorFor(username,"Debe contener minimo 6 caracteres")
+                    }
 
-    if(emailValue === '') {
-        setErrorFor(email, 'No puede dejar el email en blanco');
-    } else if (!isEmail(emailValue)) {
-        setErrorFor(email, 'No ingreso un email válido');
-    } else {
-        setSuccessFor(email);
-    }
+        else  {
+             setSuccessFor(username);
+                }
+           //Validar correo 
+          if (emailValue === "") {
+              setErrorFor (email , "El campo esta vacio")
+          } else if (!setErrorForEmail(emailValue)){
 
-    if(passwordValue === '') {
-        setErrorFor(password, 'Password no debe ingresar en blanco.');
-    } else {
-        setSuccessFor(password);
-    }
+                  setErrorFor (email , "No es un correo valido");
+          }
 
-    if(password2Value === '') {
-        setErrorFor(password2, 'Password2 no debe ngresar en blanco');
-    } else if(passwordValue !== password2Value) {
-        setErrorFor(password2, 'Passwords no coinciden');
-    } else{
-        setSuccessFor(password2);
-    }
-}
+          else {
+              setSuccessFor (email);
+          }
+           //Validar contrasena
 
-function setErrorFor(input, message) {
-    const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
-    formControl.className = 'form-control error';
-    small.innerText = message;
+           if (passwordValue === "" ){
+               setErrorFor(password , "El campo esta vacio")
+               
+           }else if (passwordValue.length < 9){
+               setErrorFor(password , "Debe tener minimo 8 caracteres")
+
+           }
+
+           else
+
+            if (passwordValue != passConfirmValue){
+               setErrorFor(passConfirm ,"Las contrasenas no coinciden")
+               setErrorFor(password ,"Las contrasenas no coinciden")
+           }
+
+           else {
+               setSuccessFor(password);
+               setSuccessFor(passConfirm);
+           }
+
+           
+
 }
 
 function setSuccessFor(input) {
     const formControl = input.parentElement;
-    formControl.className = 'form-control success';
+     formControl.className = 'form-control success';
+                                 }
+
+
+function setErrorFor(input, message) {
+  const formControl = input.parentElement;
+  const small = formControl.querySelector('small');
+  formControl.className = 'form-control error';
+  small.innerText = message;
+                           } 
+function setErrorForEmail (email){
+let regax = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+return  regax.test(email);
 }
 
-function isEmail(email) {
-    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-}
+
+
+

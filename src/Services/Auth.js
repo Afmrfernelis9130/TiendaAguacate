@@ -4,49 +4,76 @@ const user = [
 
 ]
 
-const startSession = () => {
+const username = document.getElementById("email"); 
+const passwords = document.getElementById("password");
+const form = document.querySelector("#form-container");
 
 
-    //capturamos los datos del HTML
-    const username = document.getElementById("email").value;
-    const passwords = document.getElementById("password").value;
+form.addEventListener('submit', e => {
+    e.preventDefault();
 
+    checkInputs();
 
+    //clear(elementos);
 
-//con este for recoremos el array de usurios
-    for (users of user) {
-
-        if (users.username == username && users.password == passwords) {
-
-             window.location = "/public/home.html";
+});
 
 
 
-            return false;
+//capturamos los datos del HTML
 
-        }
-        if (username == " " || passwords == "") {
-            alert("Empty fields")
-            return false;
+function checkInputs (){
 
-        }
-        if (users.username == username && passwords == "") {
-            alert("Empty password field")
-            return false;
+   
 
-        }
-        if (username == "" && users.password == passwords) {
-            alert("Empty username field")
-            return false;
+const usernameValue = username.value.trim();
+const passwordsValue = passwords.value.trim();
 
-        }
-        if (users.username != username || users.password != passwords) {
-            alert("Name o Password wrong")
-            return false;
+if (usernameValue == "" ){
+    setErrorFor(username,"El campo esta vacio")
+    
+} else 
+   if (!setErrorForEmail(usernameValue)){
+    setErrorFor(username , "No es un correo valido")
 
-        }
-    }
+} else 
+   if (setErrorForEmail(usernameValue)){
+       setSuccessFor(username)
+   }
 
-    return false;
+else 
+   if (passwordsValue == "") {
+    setErrorFor(passwords,"El campo esta vacio")
+  
+} 
+
 
 }
+
+
+  
+
+   
+
+
+
+//funciones para validad 
+
+function setSuccessFor(input) {
+    const formControl = input.parentElement;
+     formControl.className = 'form-control success';
+                                 }
+
+function setErrorFor(input, message) {
+        const formControl = input.parentElement;
+        const small = formControl.querySelector('small');
+        formControl.className = 'form-control error';
+         small.innerText = message;
+                                 } 
+function setErrorForEmail (email){
+        let regax = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+        return  regax.test(email);
+                     }
+                                    
+
+                                 
