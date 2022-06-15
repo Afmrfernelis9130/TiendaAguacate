@@ -41,7 +41,7 @@ body {
 
 .header {
     border-bottom: 1px solid #f0f0f0;
-    background-color: #f7f7f7;
+    background-color: #f3e8e8;
     padding: 20px 40px;
 }
 
@@ -90,7 +90,7 @@ body {
 
 
 
-.form-control i {
+/* .form-control i {
     visibility: hidden;
     position: absolute;
     top: 40px;
@@ -105,7 +105,7 @@ body {
 .form-control.error i.fa-exclamation-circle {
     color: #e74c3c;
     visibility: visible;
-}
+} */
 
 .form-control small {
     color: #e74c3c;
