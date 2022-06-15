@@ -11,7 +11,7 @@ export class validInput {
             const small = formControl.querySelector('small');
             formControl.className = 'form-control error';
              small.innerText = message;
-                                     } 
+                                    }
      setErrorForEmail (email){
             let regax = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
             return  regax.test(email);
@@ -19,3 +19,4 @@ export class validInput {
                                         
     
 }
+

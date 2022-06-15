@@ -1,66 +1,97 @@
-import { validInput } from "../inputValid.js";
+import {validInput} from "./inputValid.js";
 
-const user = [
-    {username: "fmartinez", password: "12345"},
-    {username: "acastillo", password: "123456"}
 
-]
- //Obtener los elementos del html
-const username = document.getElementById("email"); 
+
+const api = "/src/Model/user.json";
+
+const username = document.getElementById("email");
 const passwords = document.getElementById("password");
+const btnOnClick = document.getElementById('btn');
 const form = document.querySelector("#form-container");
+let isLogged = false;
 
-// 
 
-form.addEventListener('submit', e => {
+btnOnClick.addEventListener('click', (e) => {
+
     e.preventDefault();
 
-    checkInputs();
 
-    //clear(elementos);
-
-});
+    fetchData()
 
 
-
-
-function checkInputs (){
-//Instancia el objeto para validad los input 
-
-const validar = new validInput();
-
-//Tomar el valor del los input y borrar espacio
-
-const usernameValue = username.value.trim();
-const passwordsValue = passwords.value.trim();
+})
 
 
 
-//Validar Email
+//llamado a la api
+const fetchData = async () => {
 
-if (usernameValue == "" ){
-    validar.setErrorFor(username,"El campo esta vacio")
-    
-} else 
-   if (!validar.setErrorForEmail(usernameValue)){
-     validar.setErrorFor(username , "No es un correo valido")
 
-} else 
-   if (validar.setErrorForEmail(usernameValue)){
-     validar.setSuccessFor(username);
-   }
+    try {
+        const response = await fetch(api);
+        const data = await response.json();
 
-   //Validar password 
-   if (passwordsValue == "") {
-    validar.setErrorFor(passwords,"El campo esta vacio")
-  
-} 
+
+
+        checkInputs(data);
+
+
+    } catch (err) {
+        console.log(err);
+    }
+
 }
+
+
+//capturamos los datos del HTML
+
+function checkInputs(data) {
+    const validar = new validInput();
+
+    const usernameValue = username.value.trim();
+    const passwordsValue = passwords.value.trim();
+
+
+    data.forEach(element => {
+
+        if (element.username == usernameValue && element.pass == passwordsValue) {
+            console.log("Login Successful")
+            window.location = "/public/home.html";
+            isLogged = true;
+
+
+        } else if (element.username != usernameValue && element.pass != passwordsValue && !isLogged) {
+
+            console.log("Login Failed")
+        } else if (usernameValue == "") {
+            validar.setErrorFor(username, "The username field is required")
+             console.log("Username is empty")
+
+        }
+        else if (passwordsValue == "" && !isLogged) {
+            validar.setErrorFor(passwords, "The password field is required");
+            console.log("Passwords is empty")
+
+         } else if (!validar.setErrorForEmail(usernameValue && !isLogged)) {
+            validar.setErrorFor(username, "The email is not valid")
+
+       }
+        else if (validar.setErrorForEmail(usernameValue)) {
+            validar.setSuccessFor(username);
+        }
+        isLogged = true;
+    })
+
+}
+
 
 
   
 
    
+
+
+
 
 
 

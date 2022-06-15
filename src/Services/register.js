@@ -1,5 +1,5 @@
 
-    import { validInput } from "../inputValid.js";
+    import { validInput } from "./inputValid.js";
     const passConfirm = document.querySelector('#password2');
 
     form.addEventListener("submit" , e=>{
@@ -21,7 +21,7 @@
 const validarForm = ()=>{
         
 
-    //Instancia objeto para la validacion de los inputs 
+    //Instancia objeto para la validacion de los inputs
     const validarRegistro = new validInput ();
 
     //Capturar valor de los input y limpiar los espacios
@@ -80,6 +80,22 @@ const validarForm = ()=>{
 
 }
 
+function setSuccessFor(input) {
+    const formControl = input.parentElement;
+     formControl.className = 'form-control success';
+                                 }
+
+
+function setErrorFor(input, message) {
+  const formControl = input.parentElement;
+  const small = formControl.querySelector('small');
+  formControl.className = 'form-control error';
+  small.innerText = message;
+                           } 
+function setErrorForEmail (email){
+let regax = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+return  regax.test(email);
+}
 
 
 
