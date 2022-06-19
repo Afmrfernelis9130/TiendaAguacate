@@ -1,4 +1,25 @@
 
+:root{
+
+    --white: #FFFFFF;
+    --black: #000000;
+    --dark: #232830;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #65dd75;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+    --box : 
+
+}
+
+body{
+
+    font-family: 'Quicksand', sans-serif;
+    margin:0px;
+}
+
 
 
 .ul-menu{
@@ -7,10 +28,22 @@
     margin-top: 0rem;
     font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
     background: #fff;
-    border-bottom: 2px solid rgba(34,36,38,.15);
     box-shadow: 20 0px 10px 10px rgba(34,36,38,.15);
     align-items: center;
+    border-bottom: 1px solid #000;
+	padding: 10px;  padding-top: 20px;
+	line-height: 1.65em;
     
+}
+
+
+.username-menu{
+ display: flex;
+    
+}
+
+.search-menu{
+    display: flex;
 }
 
 .logo-nombre{
