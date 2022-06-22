@@ -1,4 +1,6 @@
 const cards = document.getElementById('cards');
+const items = document.getElementById('items');
+const footer = document.getElementById('footer');
 const templateCard = document.getElementById('template-card').content;
 const templateFooter = document.getElementById('template-footer').content;
 const templateCar = document.getElementById('template-carrito').content;
@@ -24,7 +26,7 @@ const fetchData = async () => {
     try {
         const response = await fetch('api.json');
         const data = await response.json();
-        console.log(data);
+        //console.log(data);
         pintarCards(data)
 
     } catch (err) {
@@ -76,15 +78,38 @@ const setOnCar = obj => {
         cant: 1
     }
 
-    if(car.hasOwnProperty(product.id)){
+    if (car.hasOwnProperty(product.id)) {
         product.cant = car[product.id].cant + 1;
     }
 
 
     car[product.id] = {...product}
 
+    pintarCarShop(car)
 
-    }
+
+}
+
+const pintarCarShop = () => {
+    items.innerHTML = '';
+
+    Object.values(car).forEach(element => {
+
+        templateCar.querySelector('th').textContent = element.id;
+        templateCar.querySelectorAll('td')[0].textContent = element.title;
+        templateCar.querySelectorAll('td')[1].textContent = element.cant;
+        templateCar.querySelector('.btn-info').dataset.id = element.id;
+        templateCar.querySelector('.btn-danger').dataset.id = element.id;
+        templateCar.querySelector('span').textContent = (element.cant * element.price).toString();
+
+
+        const clone = templateCar.cloneNode(true)
+
+        fragment.appendChild(clone);
+    })
+
+    items.appendChild(fragment);
+}
 
 
 
