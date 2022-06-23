@@ -27,7 +27,7 @@ const fetchData = async () => {
         const response = await fetch('api.json');
         const data = await response.json();
         //console.log(data);
-        pintarCards(data)
+        printCards(data)
 
     } catch (err) {
         console.log(err);
@@ -37,7 +37,7 @@ const fetchData = async () => {
 
 
 //con esta funcion creo los cards
-const pintarCards = data => {
+const printCards = data => {
 
 
     data.forEach(element => {
@@ -85,12 +85,13 @@ const setOnCar = obj => {
 
     car[product.id] = {...product}
 
-    pintarCarShop(car)
+
+    printCarShop(car)
 
 
 }
 
-const pintarCarShop = () => {
+const printCarShop = () => {
     items.innerHTML = '';
 
     Object.values(car).forEach(element => {
@@ -109,8 +110,31 @@ const pintarCarShop = () => {
     })
 
     items.appendChild(fragment);
+
+    printFooter();
+
 }
 
+
+const printFooter = () => {
+    footer.innerHTML = '';
+
+    if (Object.keys(car).length === 0) {
+
+        items.innerHTML = '  <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th> ';
+    }
+
+    const nCant = Object.values(car).reduce((acc, {cant}) => acc + cant, 0);
+    const nPrice = Object.values(car).reduce((acc, {price, cant}) => acc + (price * cant), 0);
+
+    templateFooter.querySelectorAll('td')[0].textContent = nCant.toString();
+    templateFooter.querySelector('span').textContent = nPrice.toString();
+
+    const clone = templateFooter.cloneNode(true)
+    footer.appendChild(clone);
+    footer.appendChild(fragment);
+
+}
 
 
 
