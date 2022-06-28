@@ -101,3 +101,24 @@ font-weight: 700;
    font-weight: 400;
 }
 
+.img-aguacate {
+    width: 180px;
+    height: 180px;
+}
+
+.card {
+    width: 250px;
+    height: 400px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+.container{
+    display:grid;
+    grid-template-columns:300px 300px 300px ;
+}
+
+
+

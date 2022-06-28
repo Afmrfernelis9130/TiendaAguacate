@@ -35,6 +35,11 @@
             const price = document.createElement("p");
             price.classList.add("price-aguacate");
             price.textContent = `${element.price}`;
+
+            //Anadimos el boton del aguacate
+            const button  = document.createElement("button");
+            button.classList.add("btn-aguacate");
+            button.textContent="Agregar ";
              
 
 
@@ -44,6 +49,7 @@
              cuerpo.appendChild(name);
              cuerpo.appendChild(description);
              cuerpo.appendChild(price);
+             cuerpo.appendChild(button);
            
 
 
