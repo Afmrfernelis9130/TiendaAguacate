@@ -50,15 +50,8 @@
              cuerpo.appendChild(description);
              cuerpo.appendChild(price);
              cuerpo.appendChild(button);
-           
-
-
-           
-
-
             
-        });
-       
+        });    
         
     }).catch(Error => console.error(Error))
   
