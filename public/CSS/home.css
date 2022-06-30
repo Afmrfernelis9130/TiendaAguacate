@@ -17,7 +17,9 @@
 body{
 
     font-family: 'Quicksand', sans-serif;
-    margin:0px;
+    margin: 0;
+	padding: 0;
+    padding-top: 80px
 }
 
 
@@ -26,15 +28,19 @@ body{
     display: flex;
     justify-content: space-around;
     margin-top: 0rem;
-    /* box-shadow: 0 1px 2px 0 rgba(34,36,38,.15); */
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15); 
     align-items: center;
 	padding: 10px;
     padding-top: 10px;  
     height: 70px;
 	line-height: 1.65em;
     margin-bottom: 100px;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	left: 0; /* Posicionamos la cabecera al lado izquierdo */
+	top: 0; /* Posicionamos la cabecera pegada arriba */
+    background-color: white;
+    
      
 
 
@@ -64,6 +70,27 @@ body{
     
 }
 
+.about-menu ul{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.about-menu ul li {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    list-style: none;
+    
+    
+}
+
+.about-menu ul li a{
+    text-decoration: none;
+}
+
+
+
 
 .img-profile{
     width: 30px;
@@ -74,7 +101,7 @@ body{
 }
 
 .search-menu input {
-    width: 500px;
+    width: 400px;
     height: 35px;
     border-radius: 30px;
     outline: none;
@@ -155,7 +182,8 @@ body{
 .card:hover{
    cursor: pointer;
    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
-   transform: translateY(-3%);
+   transform: translateY(1%);
+   overflow: hidden;
 }
 
 .btn-aguacate {
