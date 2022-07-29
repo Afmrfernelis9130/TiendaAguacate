@@ -22,10 +22,6 @@ body{
     padding-top: 80px
 }
 
-.container{
-    margin-top: 200px;
-}
-
 
 
 .ul-menu{
@@ -38,7 +34,7 @@ body{
     padding-top: 10px;  
     height: 70px;
 	line-height: 1.65em;
-    margin-bottom: 100px;
+    margin-bottom: 400px;
     position: fixed;
     width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
 	left: 0; /* Posicionamos la cabecera al lado izquierdo */
@@ -48,6 +44,11 @@ body{
      
 
 
+}
+
+
+.container{
+    margin-top: 60px;
 }
 
 
@@ -108,13 +109,6 @@ body{
 }
 
 
-
-
-
-.img-profile{
-    width: 30px;
-    height: 30;
-}
 .search-menu{
     display: flex;
 }
@@ -159,10 +153,7 @@ body{
 .logo-nombre h1 {
    font-size: 30px;
   line-height: 44px;
-  font-weight: 700;
-  text-decoration: none;
-  list-style: none;
- 
+ font-weight: 700;
 }
 
 .username-menu h2 {
@@ -171,74 +162,93 @@ body{
    font-weight: 400;
 }
 
-.img-aguacate {
-    width: 180px;
-    height: 180px;
-    margin-left: 30px;
-    
-}
-
-.container{
-    display:grid;
-    grid-template-columns:300px 300px 300px ;
-    column-gap: 5px;
-    row-gap: 10px;
-    justify-content: center;
-    
-    
-}
 
 .card {
+    display:grid;
+    grid-template-columns:350px 450px ;
+    grid-template-rows: 60px 1fr 60px 1px ;
+    column-gap: 70px;
+    justify-content: center;
     
-    width: 275px;
-    height: 330px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    border-left: #000000;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    padding-left: 10px;
-    
-}
-.card:hover{
-   cursor: pointer;
-   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
-   /* transform: translateY(1%); */
-   overflow: hidden;
 }
 
-.btn-aguacate {
+.card img {
+    width: 450px;
+    height: 450px;
+}
+.card .name-description {
+    grid-column: 2/2;
+    
+}
+
+.card .desc-description {
+    grid-column: 2/2;
+    grid-row: 2/2;
+    font-size: var(--lg);
+    color: rgb(132, 126, 126);
+}
+
+.card .price-description {
+    grid-column: 2/2 ;
+    grid-row: 3 / 3;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.card .btn-description{
+    grid-column: 2/2;
+    grid-row :4/4 ;
+}
+
+.card .addAmount {
+    
+    grid-column: 2/2;
+    
+   
+}
+
+.addAmount {
+    display: flex;
+    align-items: center;
+     gap : 5px;
+}
+
+.addAmount button{
+    width: 100px;
+    height: 25px;
+
+}
+
+.addAmount input{
+     width: 40px;
+     height: 15px;
+
+}
+
+
+.btn-description {
     background-color:var(--hospital-green);
     border: none;
     border-radius: 4px;
     color: #fff;
     font-family: inherit;
     font-size: 15px;
-    width: 80px;
+    width: 100px;
     height: 30px;
     
 }
 
-.btn-aguacate:hover{
+.btn-description:hover {
     cursor: cell;
-}
-.name-aguacate{
-    font-size: var(--lg);
-    padding: 0;
-    margin-bottom: 7px;
     
 }
 
-.name-aguacate:hover{
- text-decoration:underline;
- color: var(--hospital-green);
-    
-}
 
-.des-aguacate{
-    font-size: var(--sm);
-    color: rgb(132, 126, 126)
-}
+
+
+
+
+
+
 
 
