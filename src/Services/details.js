@@ -1,6 +1,6 @@
 import {price} from "./inputValid.js" ;
     
-    const container = document.querySelector(".container");
+    
     const API = 'https://platzi-avo.vercel.app';
 
         const stringItem =  localStorage.getItem('item')
@@ -8,8 +8,8 @@ import {price} from "./inputValid.js" ;
 
          //Formato de precio
           const priceFormat = new price();
-          
-
+          // //Seleccionar el contenedor***
+          const container = document.querySelector(".container");
 
     const detailCard = async ()=> await  fetch(`${API}/api/avo`).then(prueba => prueba.json())
     .then ( data => {

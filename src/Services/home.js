@@ -9,10 +9,10 @@
 
    const fillCart  = async ()=> await fetch(`${API}/api/avo`)
     .then( data=> data.json())
-    .then((data)=> {
+    .then( data=> {
         //Seleccionar el contenedor***
         const container = document.querySelector(".container");  
-        data.data.forEach(element => {
+          data.data.forEach(element => {
             //Creamos las cartas que estaran dentro del container
             const cuerpo = document.createElement("div");
             cuerpo.classList.add("card");
@@ -82,7 +82,7 @@
                  fetch(`${API}/api/avo/${id}`).then(prueba=> prueba.json())
                 .then(data => {
                     localStorage.setItem('item',JSON.stringify(data));
-                    window.location.href ='/public/description.html';
+                    window.location.href ='/public/details.html';
       
                 }
 
