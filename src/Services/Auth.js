@@ -1,7 +1,5 @@
 import {validInput} from "./inputValid.js";
 
-
-
 const api = "/src/Model/user.json";
 
 const username = document.getElementById("email");

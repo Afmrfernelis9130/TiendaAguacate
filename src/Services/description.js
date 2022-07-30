@@ -1,3 +1,5 @@
+import {price} from "./inputValid.js" ;
+    
     const container = document.querySelector(".container");
     const API = 'https://platzi-avo.vercel.app';
 
@@ -5,17 +7,11 @@
          const itemObject = JSON.parse(stringItem);
 
          //Formato de precio
-         const formatPrice = (price) =>{
-            const newPrice = new window.Intl.NumberFormat("en-EN" ,{
-                style:"currency",
-                currency:"USD", }).format(price);
-                return newPrice;
-    
-         };   
+          const priceFormat = new price();
+          
 
 
-
-    fetch(`${API}/api/avo`).then(prueba => prueba.json())
+    const detailCard = async ()=> await  fetch(`${API}/api/avo`).then(prueba => prueba.json())
     .then ( data => {
         let arry = data.data.find( id => id.id ==='2zd33b8c')
 
@@ -46,7 +42,7 @@
           //Anadimos el precio 
           const price = document.createElement ("p");
           price.classList.add("price-description");
-          price.textContent = formatPrice(itemObject.price) ;
+          price.textContent = priceFormat.formatPrice( itemObject.price) ;
 
           //Anadimos el boton
           const button  = document.createElement("button");
@@ -75,6 +71,8 @@
 
       
     });
+
+    detailCard();
    
         
    

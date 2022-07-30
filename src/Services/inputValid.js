@@ -1,6 +1,6 @@
+
+//Validar Inputs 
 export class validInput {
-
-
     setSuccessFor(input) {
         const formControl = input.parentElement;
          formControl.className = 'form-control success';
@@ -20,3 +20,19 @@ export class validInput {
     
 }
 
+
+//Formato para los precios
+ export class price {
+
+    formatPrice = (price) =>{
+        const newPrice = new window.Intl.NumberFormat("en-EN" ,{
+            style:"currency",
+            currency:"USD", }).format(price);
+            return newPrice;
+    
+     };  
+
+
+
+ }
+ 

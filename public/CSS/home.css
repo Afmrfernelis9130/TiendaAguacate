@@ -22,9 +22,6 @@ body{
     padding-top: 80px
 }
 
-.container{
-    margin-top: 200px;
-}
 
 
 
@@ -204,7 +201,7 @@ body{
 .card:hover{
    cursor: pointer;
    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
-   /* transform: translateY(1%); */
+    /* transform: translateY(0.5%);  */
    overflow: hidden;
 }
 

@@ -1,7 +1,6 @@
 
     import { validInput } from "./inputValid.js";
-    const passConfirm = document.querySelector('#password2');
-
+   
     form.addEventListener("submit" , e=>{
         e.preventDefault();
 
@@ -10,7 +9,7 @@
     const username = document.getElementById('username');
     const email = document.getElementById('email');
     const password = document.getElementById('passsword');
-    
+    const passConfirm = document.querySelector('#password2');
     
     
         validarForm();
@@ -80,22 +79,22 @@ const validarForm = ()=>{
 
 }
 
-function setSuccessFor(input) {
-    const formControl = input.parentElement;
-     formControl.className = 'form-control success';
+            function setSuccessFor(input) {
+               const formControl = input.parentElement;
+                   formControl.className = 'form-control success';
                                  }
 
 
-function setErrorFor(input, message) {
-  const formControl = input.parentElement;
-  const small = formControl.querySelector('small');
-  formControl.className = 'form-control error';
-  small.innerText = message;
+              function setErrorFor(input, message) {
+                  const formControl = input.parentElement;
+                  const small = formControl.querySelector('small');
+                   formControl.className = 'form-control error';
+                   small.innerText = message;
                            } 
-function setErrorForEmail (email){
-let regax = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
-return  regax.test(email);
-}
+                  function setErrorForEmail (email){
+                 let regax = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+                return  regax.test(email);
+                  }
 
 
 
