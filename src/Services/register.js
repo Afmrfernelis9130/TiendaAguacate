@@ -1,86 +1,83 @@
 
-    import { validInput } from "./inputValid.js";
-    const passConfirm = document.querySelector('#password2');
-
-    form.addEventListener("submit" , e=>{
-        e.preventDefault();
-
-        //Capturar los elementos del html
-    const form = document.querySelector('#form');
+    // import { validInput } from "./inputValid.js";
+    //Capturar los elementos del html
+    
+    // const form = document.querySelector('#form');
     const username = document.getElementById('username');
     const email = document.getElementById('email');
     const password = document.getElementById('passsword');
+    const btn = document.getElementById('btn');
+
+    const passConfirm = document.querySelector('#password2');
+
     
-    
-    
-        validarForm();
+    btn.addEventListener('click',(e)=>{
+        e.preventDefault();
+        validForm();
     });
 
 
 
-const validarForm = ()=>{
+const validForm = ()=>{
         
-
-    //Instancia objeto para la validacion de los inputs
-    const validarRegistro = new validInput ();
-
+    
     //Capturar valor de los input y limpiar los espacios
     const usernameValue = username.value.trim();
     const emailValue = email.value.trim();
-    const passwordValue = password.value.trim();
+    const passwordValue =password.value.trim();
     const passConfirmValue = passConfirm.value.trim();
    
     
     //Validar username
      if (usernameValue ==="")  {
-            validarRegistro.setErrorFor(username,"El campo esta vacio");
+            setErrorFor(username,"El campo esta vacio");
        }
          else if (usernameValue.length  < 6 ) {
 
-           validarRegistro.setErrorFor(username,"Debe contener minimo 6 caracteres")
+           setErrorFor(username,"Debe contener minimo 6 caracteres")
                     }
 
         else  {
-            validarRegistro.setSuccessFor(username);
+            setSuccessFoRegister(username);
                 }
            //Validar correo 
           if (emailValue === "") {
-             validarRegistro.setErrorFor (email , "El campo esta vacio")
-          } else if (!validarRegistro.setErrorForEmail(emailValue)){
+             setErrorFor (email , "El campo esta vacio")
+          } else if (!setErrorForEmail(emailValue)){
 
-                 validarRegistro.setErrorFor (email , "No es un correo valido");
+                 setErrorFor (email , "No es un correo valido");
           }
 
           else {
-             validarRegistro.setSuccessFor (email);
+             setSuccessFoRegister (email);
           }
            //Validar contrasena
 
            if (passwordValue === "" ){
-              validarRegistro.setErrorFor(password , "El campo esta vacio")
+              setErrorFor(password , "El campo esta vacio")
                
            }else if (passwordValue.length < 9){
-              validarRegistro.setErrorFor(password , "Debe tener minimo 8 caracteres")
+              setErrorFor(password , "Debe tener minimo 8 caracteres")
 
            }
 
            else
 
             if (passwordValue != passConfirmValue){
-              validarRegistro.setErrorFor(passConfirm ,"Las contrasenas no coinciden")
-              validarRegistro.setErrorFor(password ,"Las contrasenas no coinciden")
+              setErrorFor(passConfirm ,"Las contrasenas no coinciden")
+              setErrorFor(password ,"Las contrasenas no coinciden")
            }
 
            else {
-              validarRegistro.setSuccessFor(password);
-              validarRegistro.setSuccessFor(passConfirm);
+              setSuccessFoRegister(password);
+              setSuccessFoRegister(passConfirm);
            }
 
            
 
 }
 
-function setSuccessFor(input) {
+function setSuccessFoRegister(input) {
     const formControl = input.parentElement;
      formControl.className = 'form-control success';
                                  }

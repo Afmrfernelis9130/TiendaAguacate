@@ -1,5 +1,3 @@
-import {validInput} from "./inputValid.js";
-
 
 
 const api = "/src/Model/user.json";
@@ -9,6 +7,7 @@ const passwords = document.getElementById("password");
 const btnOnClick = document.getElementById('btn');
 const form = document.querySelector("#form-container");
 let isLogged = false;
+
 
 
 btnOnClick.addEventListener('click', (e) => {
@@ -22,7 +21,6 @@ btnOnClick.addEventListener('click', (e) => {
 })
 
 
-
 //llamado a la api
 const fetchData = async () => {
 
@@ -30,7 +28,6 @@ const fetchData = async () => {
     try {
         const response = await fetch(api);
         const data = await response.json();
-
 
 
         checkInputs(data);
@@ -46,7 +43,7 @@ const fetchData = async () => {
 //capturamos los datos del HTML
 
 function checkInputs(data) {
-    const validar = new validInput();
+    // const validar = new validInput();
 
     const usernameValue = username.value.trim();
     const passwordsValue = passwords.value.trim();
@@ -56,28 +53,41 @@ function checkInputs(data) {
 
         if (element.username == usernameValue && element.pass == passwordsValue) {
             console.log("Login Successful")
-            window.location = "/public/home.html";
+            window.location = "home.html";
             isLogged = true;
 
 
-        } else if (element.username != usernameValue && element.pass != passwordsValue && !isLogged) {
+        }
+        if (element.username != usernameValue && element.pass != passwordsValue && !isLogged) {
 
             console.log("Login Failed")
-        } else if (usernameValue == "") {
-            validar.setErrorFor(username, "The username field is required")
-             console.log("Username is empty")
 
         }
-        else if (passwordsValue == "" && !isLogged) {
-            validar.setErrorFor(passwords, "The password field is required");
-            console.log("Passwords is empty")
+        if (usernameValue == "" && !isLogged) {
 
-         } else if (!validar.setErrorForEmail(usernameValue && !isLogged)) {
-            validar.setErrorFor(username, "The email is not valid")
+            setErrorFor(username, "The username field is required")
 
-       }
-        else if (validar.setErrorForEmail(usernameValue)) {
-            validar.setSuccessFor(username);
+
+
+        }
+        if (usernameValue == "" && passwordsValue == "" &&  !isLogged) {
+
+            setErrorFor(username, "The username field is required")
+
+
+        }
+        if (passwordsValue == "" && !isLogged) {
+            setErrorFor(passwords, "The password field is required");
+
+
+        }
+        if (!setErrorForEmail(usernameValue) && !usernameValue=="" ) {
+            setErrorFor(username, "The email is not valid")
+
+
+        }
+        if (setErrorForEmail(usernameValue) ) {
+            setSuccessFor(username);
         }
         isLogged = true;
     })
@@ -85,9 +95,23 @@ function checkInputs(data) {
 }
 
 
+function setSuccessFor(input) {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
+}
 
-  
+function setErrorFor(input, message) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small');
+    formControl.className = 'form-control error';
+    small.innerText = message;
+}
 
+function setErrorForEmail(email) {
+    let regax = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+
+    return regax.test(email);
+}
    
 
 
