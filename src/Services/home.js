@@ -1,6 +1,7 @@
      import {price} from "./inputValid.js" ;
 
-
+   //Crear variable para agregar al carrito 
+     let newObjet = [];
 
     //Api para el aguacate
     const API = 'https://platzi-avo.vercel.app';
