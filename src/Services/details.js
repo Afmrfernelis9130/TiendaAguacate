@@ -10,6 +10,9 @@ import {price} from "./inputValid.js" ;
           const priceFormat = new price();
           // //Seleccionar el contenedor***
           const container = document.querySelector(".container");
+          //Seleccionar el contenedor de los atributos
+
+          const containerAttributes = document.querySelector(".containerAttributes");
 
     const detailCard = async ()=> await  fetch(`${API}/api/avo`).then(prueba => prueba.json())
     .then ( data => {
@@ -19,6 +22,7 @@ import {price} from "./inputValid.js" ;
           const card = document.createElement ("div");
           card.classList.add("card");
           
+
           //Crear div para la cantidad y el boton
           const containerChild = document.createElement("div");
           containerChild.classList.add("addAmount");
@@ -53,19 +57,49 @@ import {price} from "./inputValid.js" ;
           const input = document.createElement("input")
           input.classList.add("input-description");
           input.setAttribute("type","number");
+
+
+          //Anadimos los encabezados 
+
+          const shapeH1 = document.createElement("h1");
+          shapeH1.classList.add("shapeh1");
+
+          const hardinessH1 = document.createElement("h1");
+          hardinessH1.classList.add("hardiness");
+
+          const tasteH1 = document.createElement("h1");
+          hardinessH1
+          
+
          
+          //Anadimos los atributos
+
+          //-----------------------------------------------
+           const pShape= document.createElement("p");
+           pShape.classList.add("pshape");
+           pShape.textContent =`${itemObject.attributes.shape}`;
+
+           //----------------------------------------------
+           const pHardiness= document.createElement("p");
+           pShape.classList.add("phardiness");
+           pShape.textContent =`${itemObject.attributes.hardiness}`;
+
+           //---------------------------------------------
+           const pTaste= document.createElement("p");
+           pShape.classList.add("ptaste");
+           pShape.textContent =`${itemObject.attributes.taste}`;
+
+           
+
+
 
           //Insertamos los elementos
          container.appendChild(card);
-         card.appendChild(img);
-         card.appendChild(name);
-         card.appendChild(description);
-         card.appendChild(price);
+         card.append(img ,name ,description,price ); //**Insertar imagen/desc/name/precio a la carta */
          card.appendChild(containerChild);
-         containerChild.appendChild(input);
-         containerChild.appendChild(button);
-
-       
+         containerChild.append(input,button);
+         containerAttributes.append(pShape , pHardiness , pTaste);
+                
 
          
 

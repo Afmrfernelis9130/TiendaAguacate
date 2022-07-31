@@ -53,12 +53,7 @@
 
              //Lo inyectamos en el doc html
              container.appendChild(cuerpo);
-             cuerpo.appendChild(img);
-             cuerpo.appendChild(name);
-             cuerpo.appendChild(description);
-             cuerpo.appendChild(price);
-             cuerpo.appendChild(button);
-             
+             cuerpo.append(img,name,description,price,button); 
              //Eventos con los botones
              cuerpo.addEventListener ('click' , viewProduct);
              name.addEventListener('click',viewProduct);
