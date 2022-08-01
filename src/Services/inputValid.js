@@ -1,5 +1,5 @@
 
-//Validar Inputs 
+//Validar Inputs & Correo
 export class validInput {
     setSuccessFor(input) {
         const formControl = input.parentElement;

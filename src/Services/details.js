@@ -54,21 +54,9 @@ import {price} from "./inputValid.js" ;
           button.textContent="Add to card";
           
           //Anadimos input para la cantidad 
-          const input = document.createElement("input")
+          const input = document.createElement("input");
           input.classList.add("input-description");
           input.setAttribute("type","number");
-
-
-          //Anadimos los encabezados 
-
-          const shapeH1 = document.createElement("h1");
-          shapeH1.classList.add("shapeh1");
-
-          const hardinessH1 = document.createElement("h1");
-          hardinessH1.classList.add("hardiness");
-
-          const tasteH1 = document.createElement("h1");
-          hardinessH1
           
 
          
@@ -81,13 +69,13 @@ import {price} from "./inputValid.js" ;
 
            //----------------------------------------------
            const pHardiness= document.createElement("p");
-           pShape.classList.add("phardiness");
-           pShape.textContent =`${itemObject.attributes.hardiness}`;
+           pHardiness.classList.add("phardiness");
+           pHardiness.textContent =`${itemObject.attributes.hardiness}`;
 
            //---------------------------------------------
            const pTaste= document.createElement("p");
-           pShape.classList.add("ptaste");
-           pShape.textContent =`${itemObject.attributes.taste}`;
+           pTaste.classList.add("ptaste");
+           pTaste.textContent =`${itemObject.attributes.taste}`;
 
            
 
@@ -97,8 +85,10 @@ import {price} from "./inputValid.js" ;
          container.appendChild(card);
          card.append(img ,name ,description,price ); //**Insertar imagen/desc/name/precio a la carta */
          card.appendChild(containerChild);
+         containerAttributes.append( pShape , pHardiness ,pTaste);
+         card.appendChild(containerAttributes);
          containerChild.append(input,button);
-         containerAttributes.append(pShape , pHardiness , pTaste);
+         
                 
 
          

@@ -62,7 +62,7 @@ function checkInputs(data) {
 
             console.log("Login Failed")
         } else if (usernameValue == "") {
-            validar.setErrorFor(username, "The username field is required")
+            validar.setErrorFor(username, "The username field is required");
              console.log("Username is empty")
 
         }
