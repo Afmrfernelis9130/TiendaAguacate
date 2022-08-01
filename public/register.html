@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Title2</title>
   <link rel="stylesheet" href="/public/CSS/register.css">
 </head>
 <body>
@@ -13,31 +13,41 @@
   <form id="form" class="form">
 
     <div class="form-control">
-      <label for="email">Email</label>
-      <input type="text" placeholder="prueba@email.com" id="email" />
+      <label for="username">Usuario</label>
+      <input type="text" placeholder="username" id="username" />
       <i class="fas fa-check-circle"></i>
       <i class="fas fa-exclamation-circle"></i>
       <small>Error message</small>
     </div>
+
+    <div class="form-control">
+      <label for="email">Email</label>
+      <input  placeholder="prueba@email.com" id="email" />
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+      <small>Correo no valido</small>
+    </div>
+
     <div class="form-control">
       <label for="password">Password</label>
-      <input type="password" placeholder="Password" id="password"/>
+      <input type="password" autocomplete=""  placeholder="Password" id="password"/>
       <i class="fas fa-check-circle"></i>
       <i class="fas fa-exclamation-circle"></i>
       <small>Error message</small>
     </div>
+
     <div class="form-control">
       <label for="password2">Repetir password</label>
-      <input type="password" placeholder="Password dos" id="password2"/>
+      <input type="password" autocomplete="" placeholder="Repetir password" id="password2"/>
       <i class="fas fa-check-circle"></i>
       <i class="fas fa-exclamation-circle"></i>
       <small>Error message</small>
     </div>
 
-    <button >Submit</button>
+    <button id="btn" type="submit">Submit</button>
+
   </form>
 </div>
-
-<script src="../src/Services/register.js" type="module"></script>
+<script src="/src/Services/register.js" type="module"></script>
 </body>
 </html>
