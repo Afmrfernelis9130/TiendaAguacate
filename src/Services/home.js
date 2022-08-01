@@ -6,24 +6,27 @@
  
     const obj  = {}
 
-    fetch(`${API}/api/avo`).then(prueba=> prueba.json())
+    fetch(`${API}/api/avo`).
+    then(prueba=> prueba.json())
     .then((data)=> {
 
-                //Formato para precio
-                const formatPrice = (price) =>{
-                    const newPrice = new window.Intl.NumberFormat("en-EN" ,{
-                        style:"currency",
-                        currency:"USD", }).format(price);
-                        return newPrice;
-            
-                 };   
-        
+
+        //Formato para precio
+        const formatPrice = (price) => {
+            const newPrice = new window.Intl.NumberFormat("en-EN", {
+                style: "currency",
+                currency: "USD",
+            }).format(price);
+            return newPrice;
+
+        };
+
         data.data.forEach(element => {
             //Creamos las cartas que estaran dentro del container
             const cuerpo = document.createElement("div");
             cuerpo.classList.add("card");
-            cuerpo.dataset.id = element.id; 
-           
+            cuerpo.dataset.id = element.id;
+
 
             //Adanimos la imagen de aguacate en la carta
             const img = document.createElement("img");
@@ -36,13 +39,12 @@
             name.classList.add("name-aguacate");
             name.textContent = `${element.name}`;
             name.dataset.id = element.id;
-            
+
 
             //Anadimos la descripcion del aguacate 
             const description = document.createElement("small")
             description.classList.add("des-aguacate");
-            description.textContent=(`${element.attributes.description}`);
-           
+            description.textContent = (`${element.attributes.description}`);
 
 
             //Anadimos el precio del aguacate 
@@ -51,32 +53,29 @@
             price.textContent = formatPrice(element.price);
 
             //Anadimos el boton del aguacate
-            const button  = document.createElement("button");
+            const button = document.createElement("button");
             button.classList.add("btn-aguacate");
-            button.textContent="Add";
+            button.textContent = "Add";
             button.dataset.id = element.id;
-            
-           
 
-            
 
-             //Lo inyectamos en el doc html
-             container.appendChild(cuerpo);
-             cuerpo.appendChild(img);
-             cuerpo.appendChild(name);
-             cuerpo.appendChild(description);
-             cuerpo.appendChild(price);
-             cuerpo.appendChild(button);
-             
-             //Eventos con los botones
-             cuerpo.addEventListener ('click' , viewProduct);
-             name.addEventListener('click',viewProduct);
-             button.addEventListener('click', addToCart);
+            //Lo inyectamos en el doc html
+            container.appendChild(cuerpo);
+            cuerpo.appendChild(img);
+            cuerpo.appendChild(name);
+            cuerpo.appendChild(description);
+            cuerpo.appendChild(price);
+            cuerpo.appendChild(button);
 
-            
-    
-        
-        }).catch(Error => console.error(Error))
+            //Eventos con los botones
+            cuerpo.addEventListener('click', viewProduct);
+            name.addEventListener('click', viewProduct);
+            button.addEventListener('click', addToCart);
+
+
+        }
+
+        )
 
 
    
