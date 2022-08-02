@@ -16,7 +16,7 @@ import {price} from "./inputValid.js" ;
 
     const detailCard = async ()=> await  fetch(`${API}/api/avo`).then(prueba => prueba.json())
     .then ( data => {
-        let arry = data.data.find( id => id.id ==='2zd33b8c')
+        let arry = data.data.find( id => id.id ==='2zd33b8c');
 
           //Crear una carta 
           const card = document.createElement ("div");

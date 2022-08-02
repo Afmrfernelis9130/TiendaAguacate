@@ -13,6 +13,7 @@
     .then( data=> {
         //Seleccionar el contenedor***
         const container = document.querySelector(".container");  
+        const value = document.querySelector('.value');
           data.data.forEach(element => {
             //Creamos las cartas que estaran dentro del container
             const cuerpo = document.createElement("div");
@@ -64,14 +65,20 @@
     //Funcion para el adadir el carrito 
     function addToCart (e) {
        if ( e.target.classList.contains('btn-aguacate')) {
-           viewProduct
-      
+             const id = e.target.dataset.id;
+             console.log(id);
+             const datos = data.data.find( elementos => elementos.id === id );
+             newObjet.push(datos);
+            
+             
+         
+             
         }
 	        
        }
 
 
-    //Funcion para ver el detalle del produc
+    //Funcion para ver el detalle del producto
     function viewProduct (e){
             if  ( e.target.classList.contains('card') ||  e.target.classList.contains('name-aguacate') )   {
                 const id = e.target.dataset.id;
@@ -81,11 +88,7 @@
                     window.location.href ='/public/details.html';
       
                 }
-
-                
-
                  
-                
                 ).catch(err => {
                     console.log(err)});
 
