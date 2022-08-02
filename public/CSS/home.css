@@ -272,14 +272,25 @@ body{
     height: 50px;
 }
 
+
+
 .description-footer .socialmedia  img{
-    width: 30px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
 }
 
 
 .description-footer .address{
     display: flex;
+}
+
+.socialmedia a > p {
+  display: flex;
+  text-align: end;
+  font-size: 14px;
+  
+  
+   
 }
 
 .ccpayimage{
