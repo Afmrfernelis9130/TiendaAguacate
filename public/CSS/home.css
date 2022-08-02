@@ -240,9 +240,47 @@ body{
 
 .description-footer{
     display: grid;
+    justify-content: center;
+    grid-template-columns: 500px 500px 400px ;
     background: var(--hospital-green);
+    column-gap: -50px;
     width: 100%;
     height: 300px;
+    margin-top: 50px;
+}
+
+.description-footer h1  {
+    font-size: 20px;
+
+}
+
+.description-footer .address{
+    grid-column: 1/2;
+}
+
+.description-footer .socialmedia{
+   grid-column: 2/3 ;
+   
+}
+
+.description-footer .ccpay {
+    grid-column: 3/4;
+}
+
+.description-footer .address > img {
+    width: 50px;
+    height: 50px;
+}
+
+.ccpayimage{
+    display: flex;
+    justify-content:center;
+    gap:30px;
+}
+
+.ccpay img{
+    width: 35px;
+    height: 50px;
 }
 
 
