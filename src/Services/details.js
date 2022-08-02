@@ -1,28 +1,28 @@
-    const container = document.querySelector(".container");
+import {price} from "./inputValid.js" ;
+    
+    
     const API = 'https://platzi-avo.vercel.app';
 
         const stringItem =  localStorage.getItem('item')
          const itemObject = JSON.parse(stringItem);
 
          //Formato de precio
-         const formatPrice = (price) =>{
-            const newPrice = new window.Intl.NumberFormat("en-EN" ,{
-                style:"currency",
-                currency:"USD", }).format(price);
-                return newPrice;
-    
-         };   
+          const priceFormat = new price();
+          // //Seleccionar el contenedor***
+          const container = document.querySelector(".container");
+          //Seleccionar el contenedor de los atributos
 
+          const containerAttributes = document.querySelector(".containerAttributes");
 
-
-    fetch(`${API}/api/avo`).then(prueba => prueba.json())
+    const detailCard = async ()=> await  fetch(`${API}/api/avo`).then(prueba => prueba.json())
     .then ( data => {
-        let arry = data.data.find( id => id.id ==='2zd33b8c')
+        let arry = data.data.find( id => id.id ==='2zd33b8c');
 
           //Crear una carta 
           const card = document.createElement ("div");
           card.classList.add("card");
           
+
           //Crear div para la cantidad y el boton
           const containerChild = document.createElement("div");
           containerChild.classList.add("addAmount");
@@ -46,7 +46,7 @@
           //Anadimos el precio 
           const price = document.createElement ("p");
           price.classList.add("price-description");
-          price.textContent = formatPrice(itemObject.price) ;
+          price.textContent = priceFormat.formatPrice( itemObject.price) ;
 
           //Anadimos el boton
           const button  = document.createElement("button");
@@ -54,27 +54,49 @@
           button.textContent="Add to card";
           
           //Anadimos input para la cantidad 
-          const input = document.createElement("input")
+          const input = document.createElement("input");
           input.classList.add("input-description");
           input.setAttribute("type","number");
+          
+
          
+          //Anadimos los atributos
+
+          //-----------------------------------------------
+           const pShape= document.createElement("p");
+           pShape.classList.add("pshape");
+           pShape.textContent =`${itemObject.attributes.shape}`;
+
+           //----------------------------------------------
+           const pHardiness= document.createElement("p");
+           pHardiness.classList.add("phardiness");
+           pHardiness.textContent =`${itemObject.attributes.hardiness}`;
+
+           //---------------------------------------------
+           const pTaste= document.createElement("p");
+           pTaste.classList.add("ptaste");
+           pTaste.textContent =`${itemObject.attributes.taste}`;
+
+           
+
+
 
           //Insertamos los elementos
          container.appendChild(card);
-         card.appendChild(img);
-         card.appendChild(name);
-         card.appendChild(description);
-         card.appendChild(price);
+         card.append(img ,name ,description,price ); //**Insertar imagen/desc/name/precio a la carta */
          card.appendChild(containerChild);
-         containerChild.appendChild(input);
-         containerChild.appendChild(button);
-
-       
+         containerAttributes.append( pShape , pHardiness ,pTaste);
+         card.appendChild(containerAttributes);
+         containerChild.append(input,button);
+         
+                
 
          
 
       
     });
+
+    detailCard();
    
         
    

@@ -15,7 +15,9 @@
 }
 
 body{
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-family: 'Quicksand', sans-serif;
     margin: 0;
 	padding: 0;
@@ -70,8 +72,8 @@ body{
 }
 
 .img-logo {
-    width: 80px;
-    height:80px;
+    width: 260px;
+    height:150px;
     
 }
 
@@ -166,8 +168,9 @@ body{
 .card {
     display:grid;
     grid-template-columns:350px 450px ;
-    grid-template-rows: 60px 1fr 60px 1px ;
-    column-gap: 70px;
+    grid-template-rows: 60px 1fr 60px 1px 60px;
+    column-gap: 65px;
+    row-gap: 15px;
     justify-content: center;
     
 }
@@ -207,21 +210,22 @@ body{
    
 }
 
+.card .containerAttributes{
+    grid-column: 2/2;
+    grid-row: 5/5;
+}
+
 .addAmount {
     display: flex;
     align-items: center;
-     gap : 5px;
+    gap : 5px;
 }
 
-.addAmount button{
-    width: 100px;
-    height: 25px;
 
-}
 
 .addAmount input{
-     width: 40px;
-     height: 15px;
+     width: 50px;
+     height: 25px;
 
 }
 
@@ -234,7 +238,9 @@ body{
     font-family: inherit;
     font-size: 15px;
     width: 100px;
-    height: 30px;
+    height: 35px;
+   
+
     
 }
 
@@ -243,6 +249,31 @@ body{
     
 }
 
+.containerAttributes{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 100px 170px;
+    grid-template-rows: 50px 50px 50px;
+}
+
+
+.containerAttributes h1 {
+    font-size: 17px;
+    font-weight: bold;
+}
+.containerAttributes .hardinessh{
+    grid-column: 1/2;
+}
+
+.containerAttributes .tasteh{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.containerAttributes .pshape {
+    grid-column: 3/2;
+    grid-row: 1/2;
+}
 
 
 
