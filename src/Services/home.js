@@ -28,6 +28,7 @@
             cuerpo.dataset.id = element.id;
 
 
+
             //Adanimos la imagen de aguacate en la carta
             const img = document.createElement("img");
             img.classList.add("img-aguacate");
@@ -59,6 +60,7 @@
             button.dataset.id = element.id;
 
 
+
             //Lo inyectamos en el doc html
             container.appendChild(cuerpo);
             cuerpo.appendChild(img);
@@ -82,11 +84,11 @@
       
     //Funcion para el adadir el carrito 
     function addToCart (e) {
-       if ( e.target.classList.contains('btn-aguacate')) {
-           viewProduct
-      
-        }
-	        
+       // if ( e.target.classList.contains('btn-aguacate')) {
+       //     viewProduct
+       //
+       //  }
+console.log('hola')
 
        }
 
