@@ -27,7 +27,7 @@
             img.src = `${API}${element.image}`;
             img.dataset.id = element.id;
 
-            //Adanimos el texto del aguacate 
+            //Adanimos el nombre del aguacate 
             const name = document.createElement("h2");
             name.classList.add("name-aguacate");
             name.textContent = `${element.name}`;
@@ -55,6 +55,7 @@
              //Lo inyectamos en el doc html
              container.appendChild(cuerpo);
              cuerpo.append(img,name,description,price,button); 
+
              //Eventos con los botones
              cuerpo.addEventListener ('click' , viewProduct);
              name.addEventListener('click',viewProduct);
@@ -66,11 +67,12 @@
     function addToCart (e) {
        if ( e.target.classList.contains('btn-aguacate')) {
              const id = e.target.dataset.id;
-             console.log(id);
              const datos = data.data.find( elementos => elementos.id === id );
              newObjet.push(datos);
+             console.log(newObjet);
+             value.textContent = newObjet.length;
             
-             
+          
          
              
         }
