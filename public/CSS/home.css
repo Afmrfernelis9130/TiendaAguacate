@@ -114,15 +114,19 @@ body{
 }
 .search-menu{
     display: flex;
+    position: absolute;
+    padding: 5px;
+    right: 350px;
 }
 
 .search-menu input {
-    width: 350px;
-    height: 35px;
-    border-radius: 30px;
+    width: 240px;
+    height: 40px;
+    padding: 0;
+    font-size: 15px;
     outline: none;
     border: 1px solid silver;
-    padding-left: 5px;
+    border-radius: 30px;
 }
 
 .btn-search { 
@@ -137,14 +141,13 @@ body{
       right: 350px;
       border-radius: 50%;
       font-size: 25px;
-      
+      cursor: pointer;
       
 }
 
-.btn-search:hover{
-    cursor: pointer;
+.search-menu:hover input {
+    width: 240px;
 }
-
 
 .logo-nombre{
     display: flex;
