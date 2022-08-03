@@ -52,6 +52,7 @@
           const button  = document.createElement("button");
           button.classList.add("btn-description");
           button.textContent="Add to card";
+          button.addEventListener("click", () => {console.log("hola")})
           
           //Anadimos input para la cantidad 
           const input = document.createElement("input")
