@@ -27,13 +27,12 @@ body{
 
 .ul-menu{
     display: flex;
-    justify-content: space-around;
+    justify-content:space-between;
     margin-top: 0rem;
     box-shadow: 0 1px 2px 0 rgba(34,36,38,.15); 
     align-items: center;
-	padding: 10px;
-    padding-top: 10px;  
-    height: 70px;
+	padding: 10px 10px;
+    height: 50px;
 	line-height: 1.65em;
     margin-bottom: 100px;
     position: fixed;
@@ -59,12 +58,6 @@ body{
     font-size: 18px;
 }
 
-.img-carrito {
-    width: 20px;
-    height:30px;
-    
-}
-
 .img-logo {
     width: 260px;
     height:150px;
@@ -73,13 +66,15 @@ body{
 
 .about-menu ul{
     display: flex;
-    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0;
+    margin-right: 400px;
     
 }
 
+
 .about-menu ul li {
     display: flex;
-    flex-direction: row;
     text-decoration: none;
     list-style: none;
     padding: 12px;
@@ -106,12 +101,6 @@ body{
 
 
 
-
-
-.img-profile{
-    width: 30px;
-    height: 30;
-}
 .search-menu{
     display: flex;
     position: absolute;
@@ -120,50 +109,48 @@ body{
 }
 
 .search-menu input {
-    width: 240px;
-    height: 40px;
+    width: 0px;
+    height: 30px;
     padding: 0;
     font-size: 15px;
     outline: none;
     border: 1px solid silver;
     border-radius: 30px;
+    transition: all 0.6s ease;
 }
 
 .btn-search { 
-      text-align: center;
-      width: 50px;
-      height: 50px;
+     display: flex;
+     justify-content: center;
+      align-items: center;
+      
+      width: 40px;
+      height: 40px;
       line-height: 55px;
       background-color: var(--hospital-green);
       color: var(--white);
       position: absolute;
-      top: 19px;
-      right: 350px;
+      top: 0px;
+      right: 0px;
       border-radius: 50%;
-      font-size: 25px;
+      font-size: 23px;
       cursor: pointer;
       
 }
+
+
 
 .search-menu:hover input {
     width: 240px;
 }
 
-.logo-nombre{
-    display: flex;
-    flex-direction: row;
 
+.img-carrito {
+    width: 20px;
+    height:30px;
+    
 }
 
-
-.logo-nombre h1 {
-   font-size: 30px;
-  line-height: 44px;
-  font-weight: 700;
-  text-decoration: none;
-  list-style: none;
- 
-}
 
 .username-menu h2 {
    font-size: 15px;
