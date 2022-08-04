@@ -1,6 +1,9 @@
      import {price} from "./inputValid.js" ;
-
+    
    //Crear variable para agregar al carrito 
+    //  var Turbolinks = require ("turbolinks");
+    //  Turbolinks.start();
+    
      let newObjet = [];
 
     //Api para el aguacate
@@ -88,6 +91,8 @@
                 .then(data => {
                     localStorage.setItem('item',JSON.stringify(data));
                     window.location.href ='/public/details.html';
+                    // Turbolinks.visit =('/public/details.html');
+                    
       
                 }
                  
