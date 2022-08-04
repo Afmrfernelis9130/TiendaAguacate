@@ -89,8 +89,11 @@
                 const id = e.target.dataset.id;
                  fetch(`${API}/api/avo/${id}`).then(prueba=> prueba.json())
                 .then(data => {
+                  e.preventDefault();
                     localStorage.setItem('item',JSON.stringify(data));
                     window.location.href ='/public/details.html';
+                    
+                    
                     // Turbolinks.visit =('/public/details.html');
                     
       
